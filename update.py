@@ -56,6 +56,7 @@ update = srun([f"git init -q \
                  && git fetch origin -q \
                  && git reset --hard origin/{UPSTREAM_BRANCH} -q"], shell=True)
 
+srun(['chmod', 'u+x', '/usr/src/app/bin/tools/aria2c])
 if update.returncode == 0:
     log_info('Successfully updated with latest commit from UPSTREAM_REPO')
 else:
