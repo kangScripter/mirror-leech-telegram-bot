@@ -31,7 +31,7 @@ async def _mirror_leech(client, message, isQbit=False, isLeech=False, sameDir=No
     input_list = text[0].split(' ')
 
     arg_base = {'link': '', '-i': 0, '-m': '', '-d': False, '-j': False, '-s': False, '-b': False,
-                '-n': '', '-e': False, '-z': False, '-up': '', '-rcf': '', '-au': '', '-ap': ''}
+                '|': '', '-e': False, '-z': False, '-up': '', '-rcf': '', '-au': '', '-ap': ''}
 
     args = arg_parser(input_list[1:], arg_base)
 
@@ -44,7 +44,7 @@ async def _mirror_leech(client, message, isQbit=False, isLeech=False, sameDir=No
     seed = args['-d']
     isBulk = args['-b']
     folder_name = args['-m']
-    name = args['-n']
+    name = args['|']
     up = args['-up']
     rcf = args['-rcf']
     link = args['link']
